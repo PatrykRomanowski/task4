@@ -58,7 +58,7 @@ main(int argc, char * argv[])
     saveLog("Program uruchomiono poprawnie");
     closeLog();
 
-  createFile1("file1.bin", 100, 0x55);
+  createFile1("file2.bin", 100, 0x55);
 
 
    string helloworld = "hello w3orld";
