@@ -21,6 +21,18 @@ void saveLog(std::string msg)
     std::cout.flush();
 }
 
+
+void createFile1(const std::string name, const int count, const char value)
+{
+    std::fstream f;
+    f.open(name.c_str(), std::ios::binary | std::ios::out);
+    for (int i = 0; i < count; i++)
+    {
+        f.write((char*)&value,1);
+    }
+    f.close();
+}
+
 void openLog(std::string fileName)
 {
     logFile.open(fileName.c_str(), std::ios_base::app);
@@ -46,8 +58,10 @@ main(int argc, char * argv[])
     saveLog("Program uruchomiono poprawnie");
     closeLog();
 
+  createFile1("file1.bin", 100, 0x55);
 
-  string helloworld = "hello w3orld";
+
+   string helloworld = "hello w3orld";
 
    cout << helloworld << endl;
 
