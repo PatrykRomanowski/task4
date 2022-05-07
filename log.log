@@ -181,3 +181,76 @@ T: Tue May 03 14:48:15 2022 M: Log file closed
 T: Tue May 03 14:49:10 2022 M: Log file opened
 T: Tue May 03 14:49:10 2022 M: Program uruchomiono poprawnie
 T: Tue May 03 14:49:10 2022 M: Log file closed
+T: Sat May 07 11:04:14 2022 M: Log file opened
+T: Sat May 07 11:04:14 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:04:14 2022 M: Log file closed
+T: Sat May 07 11:35:29 2022 M: Log file opened
+T: Sat May 07 11:35:29 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:35:29 2022 M: Log file closed
+T: Sat May 07 11:42:52 2022 M: Log file opened
+T: Sat May 07 11:42:52 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:42:52 2022 M: Log file closed
+T: Sat May 07 11:43:40 2022 M: Log file opened
+T: Sat May 07 11:43:40 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:43:40 2022 M: Log file closed
+T: Sat May 07 11:54:29 2022 M: Log file opened
+T: Sat May 07 11:54:29 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:54:29 2022 M: Log file closed
+T: Sat May 07 11:55:10 2022 M: Log file opened
+T: Sat May 07 11:55:10 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 11:55:10 2022 M: Log file closed
+T: Sat May 07 12:02:20 2022 M: Log file opened
+T: Sat May 07 12:02:20 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:02:20 2022 M: Log file closed
+T: Sat May 07 12:05:42 2022 M: Log file opened
+T: Sat May 07 12:05:42 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:05:42 2022 M: Log file closed
+T: Sat May 07 12:15:12 2022 M: Log file opened
+T: Sat May 07 12:15:12 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:15:12 2022 M: Log file closed
+T: Sat May 07 12:15:48 2022 M: Log file opened
+T: Sat May 07 12:15:48 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:15:48 2022 M: Log file closed
+T: Sat May 07 12:17:01 2022 M: Log file opened
+T: Sat May 07 12:17:01 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:17:01 2022 M: Log file closed
+T: Sat May 07 12:17:05 2022 M: Log file opened
+T: Sat May 07 12:17:05 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:17:05 2022 M: file1.binXD
+T: Sat May 07 12:17:05 2022 M: Log file closed
+T: Sat May 07 12:19:03 2022 M: Log file opened
+T: Sat May 07 12:19:03 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:19:03 2022 M: Porównano plik: file1.binz plikiem: file2.bin
+T: Sat May 07 12:19:03 2022 M: Log file closed
+T: Sat May 07 12:20:15 2022 M: Log file opened
+T: Sat May 07 12:20:15 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:20:15 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:20:15 2022 M: BER= 
+T: Sat May 07 12:20:15 2022 M: Log file closed
+T: Sat May 07 12:21:34 2022 M: Log file opened
+T: Sat May 07 12:21:34 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:21:34 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:21:34 2022 M: BER = 
+T: Sat May 07 12:21:34 2022 M: Log file closed
+T: Sat May 07 12:23:24 2022 M: Log file opened
+T: Sat May 07 12:23:24 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:23:24 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:23:24 2022 M: BER = 
+T: Sat May 07 12:23:24 2022 M: Log file closed
+T: Sat May 07 12:30:58 2022 M: Log file opened
+T: Sat May 07 12:30:58 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:30:58 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:30:58 2022 M: BER = 0.000000
+T: Sat May 07 12:30:58 2022 M: Log file closed
+T: Sat May 07 12:31:29 2022 M: Log file opened
+T: Sat May 07 12:31:29 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:31:29 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:31:29 2022 M: BER = 0
+T: Sat May 07 12:31:29 2022 M: Log file closed
+T: Sat May 07 12:35:10 2022 M: Log file opened
+T: Sat May 07 12:35:10 2022 M: Program uruchomiono poprawnie
+T: Sat May 07 12:35:10 2022 M: Porównano plik: file1.bin z plikiem: file2.bin
+T: Sat May 07 12:35:10 2022 M: Sprawdzono bitów: 800
+T: Sat May 07 12:35:10 2022 M: BER = 0
+T: Sat May 07 12:35:10 2022 M: Czas obliczeń wynosił: 0 mili Sekund
+T: Sat May 07 12:35:10 2022 M: Log file closed

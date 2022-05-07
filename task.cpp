@@ -1,14 +1,14 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <ctime>
 #include <vector>
-
+#include <chrono>
 
 using namespace std;
 
 std::fstream logFile; //handler for log file
 long long counterBits = 0;
-
 
 
 
@@ -73,7 +73,6 @@ main(int argc, char * argv[])                            // funkcja główna
     std::cout << "BER Calc v1.0" << std::endl;
     openLog("log.log");
     saveLog("Program uruchomiono poprawnie");
-    closeLog();
 
    // createFile1("file2.bin", 100, 0x55);
 
@@ -85,13 +84,29 @@ main(int argc, char * argv[])                            // funkcja główna
    std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(plik1), {});
    std::vector<unsigned char> buffer2(std::istreambuf_iterator<char>(plik2), {});
 
+if(sizeof(buffer) == sizeof(buffer2))
+{
+    auto begin = std::chrono::high_resolution_clock::now();    // włączenie timera
+
    for (int i=0; i<(sizeof(buffer)+1)*4; i++) 
    {
        BER += (int)hammingDistance(buffer[i], buffer2[i]);
    }
-   
+
+    auto end = std::chrono::high_resolution_clock::now(); // wyłączenie timera
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - begin); //porównanie czasów
+
+    cout << "czas obliczeń: " << elapsed.count() << endl;
+
     cout <<"BER = " << BER << endl;
     cout <<"Sprawdzonych bitów = " << counterBits << endl;
+
+    saveLog("Porównano plik: " +  static_cast<string>(argv[1]) + " z plikiem: " + static_cast<string>(argv[2]));
+    saveLog("Sprawdzono bitów: " + to_string(counterBits));
+    saveLog( "BER = " + to_string(BER));
+    saveLog("Czas obliczeń wynosił: " + to_string(elapsed.count()) + " mili Sekund");
+
+   // cout << "Program porównał plik: \"" + argv[2] + " z plikiem: " + argv[2] << endl;
    
 
    std::cout << "argc =  : " << argc - 1 << std::endl; 
@@ -99,7 +114,13 @@ main(int argc, char * argv[])                            // funkcja główna
     for (iter = 1; iter < argc; iter++) {
         std::cout << "argv[" << iter << "] =" << argv[iter] << std::endl;
     }
-
+    closeLog();
+    
+}
+else
+{
+    cout << "pliki nie są tej samej wielkości" << endl;   //  sprawdzanie czy porównywane pliki są tej samej wielkości
+}
     // std::cout << (int)hammingDistance(0xFF, 0x01) << std::endl; // wywołanie funkcji porównywającej zgodność bitow
 
 }
