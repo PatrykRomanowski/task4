@@ -9,6 +9,9 @@ using namespace std;
 
 std::fstream logFile; //handler for log file
 long long counterBits = 0;
+char newFile1;
+char newFile2;
+
 
 
 
@@ -26,14 +29,21 @@ void saveLog(std::string msg)           // zapisanie logów
 }
 
 
-void createFile1(const std::string name, const int count, const char value)   // funkcja tworząca plik binarny
+void createFile1(const std::string name, const int count, const char value, const char value1)   // funkcja tworząca plik binarny
 {
     std::fstream f;
     f.open(name.c_str(), std::ios::binary | std::ios::out);
+   
+//    for (int i = 0; i < 20; i++)
+//     {
+//         f.write((char*)&value1,1);
+//     }
+
     for (int i = 0; i < count; i++)
     {
         f.write((char*)&value,1);
     }
+   
     f.close();
 }
 
@@ -63,7 +73,6 @@ uint8_t hammingDistance(uint8_t n1, uint8_t n2)    // funkcja porównująca zgod
         setBits += x & 1;
         x >>= 1;
     }
-    counterBits += 8;
     return setBits;
 }
 
@@ -74,27 +83,35 @@ main(int argc, char * argv[])                            // funkcja główna
     openLog("log.log");
     saveLog("Program uruchomiono poprawnie");
 
-   // createFile1("file2.bin", 100, 0x55);
+   // createFile1("file91.bin", 419430400, 0x50, 0x55);
+    // 419430400
 
-   string helloworld = "hello w3orld";
    long long BER = 0;
     
-   ifstream plik1(argv[1], ios::binary);   // wczytywanie plików binarnych
-   ifstream plik2(argv[2], ios::binary);
+   ifstream plik1(argv[1], ios::binary | std::ios::in);   // wczytywanie plików binarnych
+   ifstream plik2(argv[2], ios::binary | std::ios::in);
+   
+
    std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(plik1), {});
    std::vector<unsigned char> buffer2(std::istreambuf_iterator<char>(plik2), {});
 
-if(sizeof(buffer) == sizeof(buffer2))
-{
+
     auto begin = std::chrono::high_resolution_clock::now();    // włączenie timera
 
-   for (int i=0; i<(sizeof(buffer)+1)*4; i++) 
+   
+   for (int i=0; i<419430400; i++) 
    {
-       BER += (int)hammingDistance(buffer[i], buffer2[i]);
+      counterBits += 8;
+    
+      BER += (int)hammingDistance(buffer2[i], buffer[i]);
    }
 
+   plik1.close();
+   plik2.close();
+
+
     auto end = std::chrono::high_resolution_clock::now(); // wyłączenie timera
-    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - begin); //porównanie czasów
+    auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin); //porównanie czasów
 
     cout << "czas obliczeń: " << elapsed.count() << endl;
 
@@ -103,24 +120,17 @@ if(sizeof(buffer) == sizeof(buffer2))
 
     saveLog("Porównano plik: " +  static_cast<string>(argv[1]) + " z plikiem: " + static_cast<string>(argv[2]));
     saveLog("Sprawdzono bitów: " + to_string(counterBits));
-    saveLog( "BER = " + to_string(BER));
+    saveLog( "Różnych bitów = " + to_string(BER));
     saveLog("Czas obliczeń wynosił: " + to_string(elapsed.count()) + " mili Sekund");
-
-   // cout << "Program porównał plik: \"" + argv[2] + " z plikiem: " + argv[2] << endl;
-   
-
+    
    std::cout << "argc =  : " << argc - 1 << std::endl; 
     int iter = 0;
     for (iter = 1; iter < argc; iter++) {
         std::cout << "argv[" << iter << "] =" << argv[iter] << std::endl;
     }
+
     closeLog();
-    
-}
-else
-{
-    cout << "pliki nie są tej samej wielkości" << endl;   //  sprawdzanie czy porównywane pliki są tej samej wielkości
-}
+ 
     // std::cout << (int)hammingDistance(0xFF, 0x01) << std::endl; // wywołanie funkcji porównywającej zgodność bitow
 
 }
